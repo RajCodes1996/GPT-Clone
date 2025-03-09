@@ -1,0 +1,159 @@
+user_input,bot_response
+hello,Hi RAJ! How can I assist you?
+hi,Hello! How can I help you today?
+how are you,"I'm a bot, but I'm doing great!"
+bye,Goodbye! Have a great day!
+thanks,You're welcome! Happy to help!
+owner of this app,The owner name is Rajarshi~Yadav
+who are you,"I'm Raj GPT, your AI assistant."
+what can you do,"I can answer questions, chat, and assist with various tasks."
+your name,My name is Raj GPT.
+owner of this app,The owner of this app.. his name is Rajarshi Yadav he is an IT engineer and sofware developer. 
+tell me a joke,Sure! Why did the computer catch a cold? Because it left its Windows open!
+good morning,Good morning! Hope you have a great day!
+good night,Good night! Sweet dreams!
+where are you from,"I'm a virtual assistant, so I exist in the cloud!"
+how old are you,I'm as old as my latest update!
+what is your purpose,"I'm here to assist, answer questions, and make your experience better!"
+what is AI,"AI stands for Artificial Intelligence, the technology behind me."
+who is your creator,I was created by Rajarshi Yadav!
+what is your favorite color,"I like all colors, but blue is pretty cool!"
+tell me a fun fact,Did you know? Honey never spoils!
+who is the president of India,"As of my last update, the President of India is Droupadi Murmu."
+who is the prime minister of India,The current Prime Minister of India is Narendra Modi.
+capital of India,The capital of India is New Delhi.
+what is python,Python is a popular programming language known for its simplicity and power.
+what is machine learning,Machine Learning is a subset of AI that allows computers to learn from data without being explicitly programmed.
+how does a chatbot work,A chatbot like me processes natural language and responds using AI techniques.
+why is the sky blue,The sky appears blue because of Rayleigh scattering!
+how does the internet work,The internet is a global network that allows computers to communicate and share information.
+how do I learn programming,"Start with languages like Python or JavaScript, and practice coding daily!"
+best investment plans,"It depends on your goal! SIPs, mutual funds, and stocks are good options."
+what is cybersecurity,"Cybersecurity is the practice of protecting systems, networks, and data from digital attacks."
+tell me a quote,'The only limit to our realization of tomorrow is our doubts of today.' - Franklin D. Roosevelt
+suggest a book,'Atomic Habits' by James Clear is a great read!
+who won the FIFA World Cup,The last FIFA World Cup was won by Argentina in 2022.
+who won the cricket world cup,India won the ICC Cricket World Cup in 2011. The latest winner is still updating.
+how to stay fit,"Eat healthy, exercise daily, and stay hydrated!"
+how to improve communication skills,"Practice speaking, listen actively, and read more books!"
+can you help me,Of course! What do you need help with?
+how to be happy,"Stay positive, focus on what you love, and be around good people!"
+what is the best phone,"It depends on your needs! iPhone, Samsung, and OnePlus are top choices."
+suggest a movie,'Inception' is a great watch!
+
+# ✅ Basic DSA Questions
+what is data structure,"A data structure is a way of organizing and storing data so that it can be accessed and modified efficiently."
+what are the types of data structures,"There are four main types: Linear (Array, Linked List), Non-Linear (Tree, Graph), Hashing, and Special (Heap, Stack, Queue)."
+what is an array,"An array is a collection of elements stored at contiguous memory locations."
+what is a linked list,"A linked list is a linear data structure in which elements are stored in nodes, each containing a reference to the next node."
+what is a stack,"A stack is a LIFO (Last In, First Out) data structure used for operations like backtracking, undo, and function calls."
+what is a queue,"A queue is a FIFO (First In, First Out) data structure used in scheduling, buffering, and networking applications."
+what is a hash table,"A hash table is a data structure that stores key-value pairs using a hash function for fast lookups."
+what is a binary tree,"A binary tree is a tree data structure where each node has at most two children: left and right."
+what is a binary search tree,"A BST is a binary tree where the left subtree contains only nodes with values less than the root, and the right contains only nodes with greater values."
+what is a graph,"A graph is a non-linear data structure consisting of vertices (nodes) and edges (connections between nodes)."
+
+# ✅ Advanced DSA Questions
+what is dynamic programming,"Dynamic Programming is an optimization technique used to solve problems by breaking them into smaller subproblems and storing results to avoid redundant calculations."
+what is recursion,"Recursion is a technique where a function calls itself to solve a problem with smaller subproblems."
+what is a trie,"A Trie is a tree-like data structure used for storing dynamic sets of strings efficiently, often used in autocomplete and search engines."
+what is a heap,"A heap is a specialized tree-based data structure that satisfies the heap property, used in priority queues and heapsort algorithms."
+what is a priority queue,"A priority queue is a queue where each element has a priority, and elements with higher priority are dequeued before lower-priority elements."
+what is time complexity,"Time complexity is a measure of the computational complexity of an algorithm, describing how the execution time grows with input size."
+what is space complexity,"Space complexity measures the total memory required by an algorithm as a function of input size."
+what is big o notation,"Big O notation is used to describe the upper bound of an algorithm's time or space complexity."
+what is an adjacency matrix,"An adjacency matrix is a 2D array representation of a graph where rows and columns indicate the presence of edges."
+what is an adjacency list,"An adjacency list represents a graph using lists of connected nodes, making it more space-efficient for sparse graphs."
+what is a spanning tree,"A spanning tree is a subgraph of a graph that connects all vertices with the minimum number of edges."
+what is dijkstra's algorithm,"Dijkstra's algorithm is used to find the shortest path from a source node to all other nodes in a weighted graph."
+what is floyd warshall algorithm,"The Floyd-Warshall algorithm is used for finding the shortest paths between all pairs of nodes in a weighted graph."
+what is bellman ford algorithm,"The Bellman-Ford algorithm finds the shortest paths from a single source vertex to all other vertices, even with negative weight edges."
+what is knapsack problem,"The knapsack problem is a combinatorial optimization problem where we maximize value while staying within a weight limit."
+what is traveling salesman problem,"The Traveling Salesman Problem is an optimization problem that seeks the shortest possible route visiting each city exactly once and returning to the start."
+what is backtracking,"Backtracking is an algorithmic technique used for solving problems by exploring all possible solutions and abandoning infeasible ones."
+what is depth first search,"DFS is a graph traversal technique that explores as far as possible along a branch before backtracking."
+what is breadth first search,"BFS is a graph traversal technique that explores all neighbors of a node before moving deeper into the graph."
+
+# ✅ OOP (Object-Oriented Programming) Questions
+what is object oriented programming,"Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which contain data and behavior."
+what are the four pillars of OOP,"The four pillars of OOP are Encapsulation, Abstraction, Inheritance, and Polymorphism."
+what is encapsulation,"Encapsulation is the bundling of data and methods that operate on that data into a single unit (class) to restrict direct access."
+what is abstraction,"Abstraction is the process of hiding implementation details and exposing only the necessary functionalities to the user."
+what is inheritance,"Inheritance is a mechanism where one class (child) derives the properties and behavior of another class (parent)."
+what is polymorphism,"Polymorphism allows one interface to be used for multiple functionalities, such as method overloading and method overriding."
+what is method overloading,"Method Overloading allows multiple methods in the same class to have the same name but different parameters."
+what is method overriding,"Method Overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass."
+what is constructor in oop,"A constructor is a special method in a class that initializes an object when it is created."
+what is destructor in oop,"A destructor is a special method that is automatically invoked when an object is destroyed to free resources."
+what is class and object,"A class is a blueprint for creating objects, while an object is an instance of a class."
+what is the difference between class and object,"A class is a template, whereas an object is an instance of that template containing real values."
+what is multiple inheritance,"Multiple Inheritance is when a class inherits from more than one base class."
+what is hybrid inheritance,"Hybrid Inheritance is a combination of multiple types of inheritance (e.g., multiple and hierarchical inheritance)."
+what is an interface,"An interface is an abstract type that defines a contract for classes to implement but does not provide implementation details."
+what is an abstract class,"An abstract class is a class that cannot be instantiated and may contain abstract methods that must be implemented by derived classes."
+what is the difference between an abstract class and an interface,"An abstract class can have both abstract and non-abstract methods, while an interface only has abstract methods (before Java 8)."
+what is solid principle in oop,"SOLID is an acronym for five design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion."
+what is the difference between static and dynamic binding,"Static binding occurs at compile-time (method overloading), while dynamic binding occurs at runtime (method overriding)."
+what is the difference between composition and inheritance,"Inheritance is a 'is-a' relationship where a class extends another, while composition is a 'has-a' relationship where a class contains another class."
+
+# Technology & Programming
+what is an API,"An API (Application Programming Interface) allows different software systems to communicate with each other."
+what is cloud computing,"Cloud computing is the delivery of computing services over the internet, including storage, servers, databases, and networking."
+what is machine learning,"Machine Learning is a subset of AI that enables computers to learn from data and make decisions."
+what is deep learning,"Deep Learning is a branch of Machine Learning that uses neural networks with multiple layers to analyze complex patterns in data."
+what is artificial intelligence,"Artificial Intelligence (AI) is a field of computer science that enables machines to perform tasks that typically require human intelligence."
+what is blockchain,"Blockchain is a decentralized, distributed ledger technology used for secure and transparent transactions, commonly associated with cryptocurrencies."
+what is cryptocurrency,"Cryptocurrency is a digital currency secured by cryptography, with Bitcoin being the most popular example."
+what is 5G,"5G is the fifth generation of mobile networks, offering faster speeds and lower latency than 4G."
+what is IoT,"The Internet of Things (IoT) refers to a network of interconnected devices that communicate and share data."
+what is cyber security,"Cybersecurity is the practice of protecting systems, networks, and data from digital attacks."
+
+# Science & General Knowledge
+what is quantum computing,"Quantum computing is an advanced field of computing that uses quantum bits (qubits) to perform complex calculations much faster than traditional computers."
+what is gravity,"Gravity is a force that attracts objects towards each other, discovered by Sir Isaac Newton."
+who discovered electricity,"Electricity was studied by many scientists, but Benjamin Franklin's kite experiment is one of the most famous contributions."
+who discovered penicillin,"Penicillin was discovered by Alexander Fleming in 1928."
+who invented the telephone,"Alexander Graham Bell is credited with inventing the telephone in 1876."
+who invented the light bulb,"Thomas Edison is widely credited with inventing the practical electric light bulb."
+who invented the internet,"The internet was developed by multiple researchers, but ARPANET, created by the U.S. Department of Defense, was its foundation."
+what is photosynthesis,"Photosynthesis is the process by which green plants use sunlight to convert carbon dioxide and water into oxygen and glucose."
+what is the speed of light,"The speed of light in a vacuum is approximately 299,792 kilometers per second."
+what is relativity,"The theory of relativity, proposed by Albert Einstein, explains how time and space are relative to the observer."
+
+# Health & Fitness
+how to lose weight,"To lose weight, maintain a healthy diet, exercise regularly, and stay hydrated."
+how to gain muscle,"Gaining muscle requires strength training, a high-protein diet, and adequate rest."
+how to boost immunity,"Eat a balanced diet, exercise, get enough sleep, and stay hydrated to boost immunity."
+what are the benefits of yoga,"Yoga improves flexibility, reduces stress, enhances mental clarity, and promotes overall well-being."
+how much water should I drink daily,"It is recommended to drink around 8-10 glasses (2-3 liters) of water per day."
+what is meditation,"Meditation is a practice that involves focusing the mind to achieve relaxation and mindfulness."
+what are the symptoms of diabetes,"Common symptoms include frequent urination, excessive thirst, and fatigue."
+what are the symptoms of high blood pressure,"High blood pressure may cause headaches, dizziness, and chest pain."
+what are the benefits of exercise,"Regular exercise improves cardiovascular health, boosts mood, and enhances overall fitness."
+what is a balanced diet,"A balanced diet includes proteins, carbohydrates, fats, vitamins, and minerals in appropriate proportions."
+
+# Entertainment & Fun
+who is the best football player,"The best football player is subjective, but legends like Lionel Messi and Cristiano Ronaldo are widely regarded as top players."
+who is the best cricketer,"Cricket legends like Sachin Tendulkar, Virat Kohli, and MS Dhoni are among the greatest cricketers."
+what is the highest-grossing movie,"As of now, 'Avatar' and 'Avengers: Endgame' are among the highest-grossing movies."
+who is the richest person in the world,"The richest person frequently changes, but Elon Musk, Jeff Bezos, and Bernard Arnault have been among the top."
+who is the fastest man in the world,"Usain Bolt holds the record for the fastest 100m sprint."
+what is the best Netflix series,"Popular Netflix series include 'Stranger Things,' 'Money Heist,' and 'Breaking Bad.'"
+what is the best-selling book,"The Bible is the best-selling book of all time, followed by 'Harry Potter' and 'Don Quixote.'"
+who is the king of pop,"Michael Jackson is known as the King of Pop."
+who is the queen of England,"As of the latest update, Queen Elizabeth II was the reigning Queen of England."
+who is the prime minister of the UK,"The Prime Minister of the UK frequently changes, please check the latest updates online."
+
+# Motivational & Self-Improvement
+
+how to be successful,"Success requires hard work, consistency, learning from failures, and setting clear goals."
+how to stay motivated,"Stay motivated by setting small goals, rewarding yourself, and surrounding yourself with positive influences."
+how to overcome failure,"Learn from mistakes, stay resilient, and keep trying with a positive mindset."
+how to develop self-discipline,"Self-discipline comes with practice, setting clear goals, and avoiding distractions."
+what is the secret to happiness,"Happiness comes from gratitude, meaningful relationships, and personal growth."
+what is the key to success,"The key to success is persistence, continuous learning, and adaptability."
+how to become rich,"Building wealth requires smart investments, financial literacy, and disciplined savings."
+how to stop procrastinating,"Break tasks into smaller steps, set deadlines, and eliminate distractions to stop procrastinating."
+how to build confidence,"Confidence comes from practice, self-belief, and stepping out of your comfort zone."
+what are the habits of successful people,"Successful people wake up early, set goals, read books, and stay disciplined."
+

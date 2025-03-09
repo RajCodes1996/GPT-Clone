@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAJ GPT</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 500px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chat-header {
+            background: PURPLE;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .chat-box {
+            height: 450px;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            background: #f4f4f4;
+            word-wrap: break-word;
+
+        }
+
+        .message-container {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .message {
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 85%; /* Allow more space for long text */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            display: inline-block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+
+        .user-message,.bot-message {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal; /* Ensure text wraps properly */
+            max-width: 80%; /* Adjust width to prevent overflow */
+            display: inline-block;
+        }
+
+        .user-message {
+            background-color: #0056b3;
+            color:white;
+        }
+
+        .bot-message {
+            background-color:black;
+            color:white;
+        }
+
+        .message-container img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        .user-container {
+            flex-direction: row-reverse;
+        }
+
+        .typing-indicator {
+            font-size: 18px;
+            color: gray;
+            margin: 5px;
+            display: none;
+        }
+
+        .input-box {
+            display: flex;
+            padding: 25px;
+            background: white;
+            border-top: 1px solid #ddd;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            background: #f1f1f1;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typewriter effect */
+        .bot-message span {
+            display: inline-block;
+            overflow: hidden;
+            white-space: wrap;
+            border-right: 3px solid transparent;
+            animation: typing 0.05s steps(30, end) forwards;
+        }
+
+        #gpt {
+            position: absolute;
+            width: 8%;
+            top: 8px;
+            right: 99px;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink-caret {
+        50% { border-color: transparent; }
+}
+
+        /* Floating effect for the chat container */
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .chat-container {
+            animation: floating 5s infinite ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Glowing effect for the send button */
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 5px #007bff;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #007bff;
+            }
+
+            100% {
+                box-shadow: 0 0 5px #007bff;
+            }
+        }
+
+        button {
+            animation: glowing 1.5s infinite alternate;
+        }
+
+        /* Pulsing typing indicator */
+        @keyframes pulse {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .typing-indicator {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Message Slide-in Effect */
+        @keyframes slideIn {
+            from {
+                transform: translateX(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .message {
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        /* AI Glow Effect for Bot Messages */
+        @keyframes botGlow {
+            0% {
+                box-shadow: 0 0 5px #e0e0e0;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #007bff;
+            }
+
+            100% {
+                box-shadow: 0 0 5px #e0e0e0;
+            }
+        }
+
+        .bot-message {
+            animation: botGlow 2s infinite alternate;
+        }
+
+        /* Animated Gradient Background */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #dd1177, #0a0a0a, #169b16);
+            background-size: 300% 300%;
+            animation: gradientAnimation 8s infinite ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Particles Effect */
+        @keyframes floatingParticles {
+            0% {
+                transform: translateY(0px);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(-20px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 0.8;
+            }
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: floatingParticles 5s infinite ease-in-out alternate;
+        }
+
+        /* Positioning random particles */
+        .particle:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-duration: 6s;
+        }
+
+        .particle:nth-child(2) {
+            top: 30%;
+            left: 80%;
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(3) {
+            top: 50%;
+            left: 50%;
+            animation-duration: 5s;
+        }
+
+        .particle:nth-child(4) {
+            top: 70%;
+            left: 20%;
+            animation-duration: 7s;
+        }
+
+        .particle:nth-child(5) {
+            top: 90%;
+            left: 70%;
+            animation-duration: 6s;
+        }
+
+        /* Background Heading Text */
+        .heading-text {
+            position: absolute;
+            top: 4%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 180%;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid rgba(255, 255, 255, 0.8);
+            animation: typingEffect 4s steps(30, end), blinkCursor 0.8s infinite;
+        }
+
+        /* Typing Effect */
+        @keyframes typingEffect {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Blinking Cursor */
+        @keyframes blinkCursor {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+
+
+        /* Falling Stars (Meteor) Effect */
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: fall linear infinite;
+        }
+
+        /* Meteor Animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) translateX(-20px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Typing Effect Text -->
+    <div class="heading-text" id="heading-text">WELCOME TO RAJARSHI'S GPT</div>
+
+    <!-- <div class="chat-container">
+        <div class="chat-header"><i>Rajarshi's - GPT</i>
+        <img id="gpt" src="/static/gptt.png" alt="Bot"></div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="typing-indicator" id="typing">Bot is typing...</div>
+        <div class="input-box">
+            <input style="border-style: inset; background-color: black; color:#fff" type="text" id="user-input" placeholder="Ask anything..." onkeypress="handleKeyPress(event)">
+            <button style="background-color: rgb(201, 9, 9); border-style: outset;" onclick="sendMessage()">Send</button>
+        </div>
+    </div> -->
+
+    <body onload="displayWelcomeMessage()">
+        <div class="chat-container">
+            <div class="chat-header"><i>Rajarshi's - GPT</i>
+                <img id="gpt" src="/static/gptt.png" alt="Bot">
+            </div>
+            <div class="chat-box" id="chat-box">
+                <!-- Default Welcome Message -->
+            </div>
+            <div class="typing-indicator" id="typing">Bot is typing...</div>
+            <div class="input-box">
+                <input style="border-style: inset; background-color: whitesmoke; color:black; font-family:Verdana, Geneva, Tahoma, sans-serif" type="text" id="user-input"
+                    placeholder="Ask anything..." onkeypress="handleKeyPress(event)">
+                <button style="background-color: red; border-style: outset;" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+
+        <!-- Background Falling Stars -->
+        <div class="stars" id="stars-container"></div>
+
+
+        <i>
+            <footer
+                style="color:white; font-family: cursive;  font-size: 25px; position: absolute; top:760px; right:505px">
+                <u>Developed by @Rajarshi~Yadav</u></footer>
+        </i>
+
+        <script>
+            function sendMessage() {
+                let userInput = document.getElementById("user-input").value;
+                let chatBox = document.getElementById("chat-box");
+                let typingIndicator = document.getElementById("typing");
+
+                if (userInput.trim() === "") return;
+
+                // User message with image
+                let userMessageContainer = document.createElement("div");
+                userMessageContainer.classList.add("message-container", "user-container");
+                userMessageContainer.innerHTML = `
+                <img src="/static/men.png" alt="User">
+                <div class="message user-message">${userInput}</div>
+            `;
+                chatBox.appendChild(userMessageContainer);
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                document.getElementById("user-input").value = "";
+
+                // Show typing indicator
+                typingIndicator.style.display = "block";
+
+                setTimeout(() => {
+                    fetch("/api/chat/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ message: userInput }),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Hide typing indicator
+                            typingIndicator.style.display = "none";
+
+                            // Bot response with image
+                            let botMessageContainer = document.createElement("div");
+                            botMessageContainer.classList.add("message-container");
+                            botMessageContainer.innerHTML = `
+                        <img src="/static/ggp.png" alt="Bot">
+                        <div class="message bot-message"><span></span></div>
+                    `;
+
+                            chatBox.appendChild(botMessageContainer);
+                            chatBox.scrollTop = chatBox.scrollHeight;
+
+                            // Typewriter effect for bot response
+                            let botMessageSpan = botMessageContainer.querySelector("span");
+                            typeText(botMessageSpan, data.response, 30);
+                        });
+                }, 1000); // Simulate bot typing delay
+            }
+
+            function handleKeyPress(event) {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            }
+
+            function typeText(element, text, speed) {
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+                type();
+            }
+        </script>
+
+
+        <script>
+            // Function to create falling stars (meteors)
+            function createStar() {
+                const star = document.createElement("div");
+                star.classList.add("star");
+
+                // Random position and speed
+                star.style.left = Math.random() * window.innerWidth + "px";
+                star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                star.style.animationDelay = Math.random() * 2 + "s";
+
+                document.getElementById("stars-container").appendChild(star);
+
+                // Remove the star after animation
+                setTimeout(() => {
+                    star.remove();
+                }, 5000);
+            }
+            // Generate stars continuously
+            setInterval(createStar, 200);
+        </script>
+
+        <script>
+            function displayWelcomeMessage() {
+                let chatBox = document.getElementById("chat-box");
+
+                let welcomeMessageContainer = document.createElement("div");
+                welcomeMessageContainer.classList.add("message-container");
+
+                welcomeMessageContainer.innerHTML = `
+            <img src="/static/ggp.png" alt="Bot">
+            <div class="message bot-message"><span></span></div>
+        `;
+
+                chatBox.appendChild(welcomeMessageContainer);
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Typewriter Effect for Welcome Message
+                let botMessageSpan = welcomeMessageContainer.querySelector("span");
+                typeText(botMessageSpan, "Welcome to Raj GPT, ask anything!", 30);
+            }
+
+            function typeText(element, text, speed) {
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+                type();
+            }
+        </script>
+
+
+
+    </body>
+
+</html>
